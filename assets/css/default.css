@@ -96,21 +96,34 @@ show elememts in toggle on modus and hide elements of toggle off modus
 .toggle-element-label {
 	left: 0;
     position: fixed;
-    font-size: 1.5em;
+    font-size: 1.625em;
     top: 0;
     width: 100%;
-    background: #000;
+    background: #03162D;
     z-index: 1;
-    text-align: center;
-    line-height: 45px;
+    line-height: 65px;
 }
-
+.toggle-element-label i {
+	margin-left: .625em;
+}
+.toggle-element-label .fa-toggle-on:after,
+.toggle-element-label .fa-toggle-off:after {
+    font: 300 .375em 'Work Sans', Arial, Helvetica, sans-serif;
+    position: relative;
+    left: 0.5em;
+    top: -1.125em;
+}
+.toggle-element-label .fa-toggle-on:after {
+	content: 'switch to me';
+}
+.toggle-element-label .fa-toggle-off:after {
+	content: 'switch to timeline';
+}
 /* content */
 .content {
 	font-weight: 100;
 	position: relative;
 	width: 200%;
-	min-height: 13em;
 }
 .content .start-wrapper {
 	float: left;
@@ -131,16 +144,19 @@ show elememts in toggle on modus and hide elements of toggle off modus
 }
 .content .information {
 	font-weight: 100;
+	line-height: 1.5em;
+	margin-bottom: 2em;
 }
 
 /*graph wrapper*/
 .content .graph {
 	width: 50%;
 	float: left;
+	margin: .5em 0 2em;
 }
 .content .graph .item{
 	font-size: .625em;
-	margin-bottom: .5em;
+	margin-bottom: .75em;
 }
 .content .graph .item span {
     width: 12%;
@@ -161,7 +177,6 @@ show elememts in toggle on modus and hide elements of toggle off modus
     clear: both;
     font-weight: 500;
     line-height: 1.5em;
-    text-transform: uppercase;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -195,12 +210,12 @@ show elememts in toggle on modus and hide elements of toggle off modus
 .footer {
 	width: 100%;
     font-weight: 300;
-    background: #000;
+    background: #03162D;
     float: left;
     left: 0;
     position: fixed;
     bottom: 0;
-    line-height: 45px;
+    line-height: 65px;
     text-align: center;
 }
 .footer a,
