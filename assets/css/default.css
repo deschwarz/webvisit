@@ -13,166 +13,145 @@ body {
 	font-size: 1.375rem;
 	background: #0e2745;
 	color: rgba(255, 255, 255, .75);
+	margin: 2.5em 0 0 1em;
+	overflow-x: hidden;
 }
 
-/*.background {
-	position: fixed;
-	z-index: 1;
-	height: 100%;
-}*/
-
-/*.background img {
-	max-height: 100%;
-}*/
-
-/*.toggle-element-label {
-	position: absolute;
-    left: 0;
-    z-index: 3;
-    padding: 0.625em .5em;
-    font-size: 1.375em;
-}*/
-
-.toggle-element-label {
-	left: 0;
-    /*transform: translate(-50%,-50%);*/
-    position: absolute;
-	font-size: 1.25em;
-    top: -1.125em;
+.clearfix:after {
+    content: ".";
+    clear: both;
+    display: block;
+    visibility: hidden;
+    height: 0px;
 }
 
+/* invisible checkbox helps to toggle Button */
+.toggle-element {
+	display: none;
+}
 
-/* handle show/hide elements with toggle*/
-/*.content .information,*/
+/* 
+animation
+handle show/hide elements with toggle
+
+toggle off (unchecked)
+first hide elements, that show in toggle on modus only
+*/
 .content .graph,
 .toggle-element-label .fa-toggle-on {
 	display: none;
 }
-.toggle-element:checked ~ .start-wrapper {
-	right: 110%;
-}
 
-
+/*
+toggle on (:checked)
+show elememts in toggle on modus and hide elements of toggle off modus
+*/
 .toggle-element:checked ~ .toggle-element-label .fa-toggle-off {
 	display: none;
 }
-.toggle-element:checked ~ .graph {
-	display: inline-block;
-}
+.toggle-element:checked ~ .graph,
 .toggle-element:checked ~ .toggle-element-label .fa-toggle-on {
 	display: inline-block;
 }
-
-.content .information {
-	font-weight: 100;
-    /*white-space: nowrap;*/
-    /*position: absolute;*/
-    /*line-height: 2em;*/
-    /*font-size: .75em;*/
-    /*top: 2.75em;*/
-}
-
 .toggle-element:checked ~ .start-wrapper {
+  right: -50%;
   animation-duration: .5s;
   animation-name: slideOut;
-  /*animation-timing-function: linear;*/
-  /*animation-iteration-count: 5;*/
-  /*animation-direction: alternate;*/
   position: relative;
+  height: 0;
+  animation-fill-mode: forwards;
 }
-
 .toggle-element:checked ~ .graph {
   animation-duration: .5s;
   animation-name: slideIn;
-  /*animation-timing-function: linear;*/
-  /*animation-iteration-count: 5;*/
-  /*animation-direction: alternate;*/
-  position: absolute;
-  top: 1em;
   -webkit-animation-delay: .5s; 
   animation-delay: .5s;
   opacity: 0;
+  margin-left: 0;
   animation-fill-mode: forwards;
 }
 
+/* animation settings */
+@keyframes slideIn {
+  from {
+  margin-left : 100%;
+  }
+  to {
+  	opacity: 1;
+    margin-left: 0;
+  }
+}
 @keyframes slideOut {
   from {
 	opacity: 1;
  	right : 0;
   }
- 
-
   to {
   	opacity: 0;
-    right: -100%;
+    right: -50%;
   }
 }
 
-@keyframes slideIn {
-  from {
-
-  right : -100%;
-  /*opacity: 0;*/
-  }
- 
-
-  to {
-  	opacity: 1;
-    right: 0;
-  }
+/* toggle element */
+.toggle-element-label {
+	left: 0;
+    position: fixed;
+    font-size: 1.5em;
+    top: 0;
+    width: 100%;
+    background: #000;
+    z-index: 1;
+    text-align: center;
+    line-height: 45px;
 }
 
-
-
-
-
+/* content */
 .content {
-	/*position: absolute;*/
-	/*z-index: 2;*/
-	margin: 1.25em 0 0 1em;
-	line-height: 2.5em;
 	font-weight: 100;
 	position: relative;
+	width: 200%;
+	min-height: 13em;
 }
-
-.content h1 {
+.content .start-wrapper {
+	float: left;
+	width: 50%;
+}
+.content .intro {
 	font-weight: 100;
-    /*margin-bottom: .25em;*/
+	margin-top: 1em;
 }
-
 .content .title {
 	font-weight: 900;
-    /*line-height: 3em;*/
     background: rgba(255, 255, 255, .75);
     color: #0e2745;
     text-align: right;
     padding-right: 1em;
-    margin-right: 0;
+    line-height: 2.5em;
+    margin: .25em 0;
+}
+.content .information {
+	font-weight: 100;
 }
 
+/*graph wrapper*/
 .content .graph {
-	width: 100%;
+	width: 50%;
+	float: left;
 }
-
 .content .graph .item{
 	font-size: .625em;
-	line-height: 1em;
 	margin-bottom: .5em;
-
 }
-
 .content .graph .item span {
     width: 12%;
     display: inline-block;
-    /* white-space: nowrap; */
     border-left: 1px solid;
     text-align: center;
 }
-
 .content .graph .period {
     border-bottom: 1px solid rgba(255, 255, 255, .75);
+    margin-top: 1em;
 }
-
 .content .graph .skill {
     background: rgba(255, 255, 255, .75);
     border-bottom: 0;
@@ -190,7 +169,6 @@ body {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-
 .content .graph .skill.php {
 	width: 95%;
 }
@@ -213,48 +191,38 @@ body {
 	width: 100%;
 }
 
-
-
-
-
+/* Footer */
 .footer {
 	width: 100%;
-    position: absolute;
-    bottom: 1em;
-    text-align: right;
     font-weight: 300;
-    right: 1em;
+    background: #000;
+    float: left;
+    left: 0;
+    position: fixed;
+    bottom: 0;
+    line-height: 45px;
+    text-align: center;
 }
-
 .footer a,
 .footer a:link
 .footer a:visited {
 	color: rgba(255, 255, 255, .75);
 	text-decoration: none;
 }
-
 .footer a:hover {
 	color: rgba(255, 255, 255, .5);
 }
-
 .footer a:active,
 .footer a:focus {
 	color: rgba(255, 255, 255, .5);
 	outline: none;
 }
-
-.footer a {
-	/*margin-right: .5em;*/
-}
-
 .footer a .fa {
 	margin-left: .25em;
 }
-
 .footer a .text {
 	display: none;
 }
-
 
 @media (orientation: landscape) {
 /*	.toggle-element-label {
@@ -266,7 +234,7 @@ body {
 		max-width: 100%;
 	}
 
-	.content h1, .content .information, .content .title {
+	.content .intro, .content .information, .content .title {
 		display: none;
 	}*/
 }
