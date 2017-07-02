@@ -1,0 +1,272 @@
+
+html, body {
+	/*height: 100%;*/
+}
+
+html {
+	font-size: 16px;
+	font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+}
+
+body {
+	color: #fff;
+	font-size: 1.375rem;
+	background: #0e2745;
+	color: rgba(255, 255, 255, .75);
+}
+
+/*.background {
+	position: fixed;
+	z-index: 1;
+	height: 100%;
+}*/
+
+/*.background img {
+	max-height: 100%;
+}*/
+
+/*.toggle-element-label {
+	position: absolute;
+    left: 0;
+    z-index: 3;
+    padding: 0.625em .5em;
+    font-size: 1.375em;
+}*/
+
+.toggle-element-label {
+	left: 0;
+    /*transform: translate(-50%,-50%);*/
+    position: absolute;
+	font-size: 1.25em;
+    top: -1.125em;
+}
+
+
+/* handle show/hide elements with toggle*/
+/*.content .information,*/
+.content .graph,
+.toggle-element-label .fa-toggle-on {
+	display: none;
+}
+.toggle-element:checked ~ .start-wrapper {
+	right: 110%;
+}
+
+
+.toggle-element:checked ~ .toggle-element-label .fa-toggle-off {
+	display: none;
+}
+.toggle-element:checked ~ .graph {
+	display: inline-block;
+}
+.toggle-element:checked ~ .toggle-element-label .fa-toggle-on {
+	display: inline-block;
+}
+
+.content .information {
+	font-weight: 100;
+    /*white-space: nowrap;*/
+    /*position: absolute;*/
+    /*line-height: 2em;*/
+    /*font-size: .75em;*/
+    /*top: 2.75em;*/
+}
+
+.toggle-element:checked ~ .start-wrapper {
+  animation-duration: .5s;
+  animation-name: slideOut;
+  /*animation-timing-function: linear;*/
+  /*animation-iteration-count: 5;*/
+  /*animation-direction: alternate;*/
+  position: relative;
+}
+
+.toggle-element:checked ~ .graph {
+  animation-duration: .5s;
+  animation-name: slideIn;
+  /*animation-timing-function: linear;*/
+  /*animation-iteration-count: 5;*/
+  /*animation-direction: alternate;*/
+  position: absolute;
+  top: 1em;
+  -webkit-animation-delay: .5s; 
+  animation-delay: .5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideOut {
+  from {
+	opacity: 1;
+ 	right : 0;
+  }
+ 
+
+  to {
+  	opacity: 0;
+    right: -100%;
+  }
+}
+
+@keyframes slideIn {
+  from {
+
+  right : -100%;
+  /*opacity: 0;*/
+  }
+ 
+
+  to {
+  	opacity: 1;
+    right: 0;
+  }
+}
+
+
+
+
+
+.content {
+	/*position: absolute;*/
+	/*z-index: 2;*/
+	margin: 1.25em 0 0 1em;
+	line-height: 2.5em;
+	font-weight: 100;
+	position: relative;
+}
+
+.content h1 {
+	font-weight: 100;
+    /*margin-bottom: .25em;*/
+}
+
+.content .title {
+	font-weight: 900;
+    /*line-height: 3em;*/
+    background: rgba(255, 255, 255, .75);
+    color: #0e2745;
+    text-align: right;
+    padding-right: 1em;
+    margin-right: 0;
+}
+
+.content .graph {
+	width: 100%;
+}
+
+.content .graph .item{
+	font-size: .625em;
+	line-height: 1em;
+	margin-bottom: .5em;
+
+}
+
+.content .graph .item span {
+    width: 12%;
+    display: inline-block;
+    /* white-space: nowrap; */
+    border-left: 1px solid;
+    text-align: center;
+}
+
+.content .graph .period {
+    border-bottom: 1px solid rgba(255, 255, 255, .75);
+}
+
+.content .graph .skill {
+    background: rgba(255, 255, 255, .75);
+    border-bottom: 0;
+    color: #0e2745;
+    text-align: center;
+    float: right;
+    clear: both;
+    font-weight: 500;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 0.125em;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.content .graph .skill.php {
+	width: 95%;
+}
+.content .graph .skill.html-css {
+	width: 100%;
+}
+.content .graph .skill.sass-less {
+	width: 64%;
+}
+.content .graph .skill.responsive {
+	width: 46%;
+}
+.content .graph .skill.css3-html5 {
+	width: 73%;
+}
+.content .graph .skill.js {
+	width: 69%;
+}
+.content .graph .skill.cms {
+	width: 100%;
+}
+
+
+
+
+
+.footer {
+	width: 100%;
+    position: absolute;
+    bottom: 1em;
+    text-align: right;
+    font-weight: 300;
+    right: 1em;
+}
+
+.footer a,
+.footer a:link
+.footer a:visited {
+	color: rgba(255, 255, 255, .75);
+	text-decoration: none;
+}
+
+.footer a:hover {
+	color: rgba(255, 255, 255, .5);
+}
+
+.footer a:active,
+.footer a:focus {
+	color: rgba(255, 255, 255, .5);
+	outline: none;
+}
+
+.footer a {
+	/*margin-right: .5em;*/
+}
+
+.footer a .fa {
+	margin-left: .25em;
+}
+
+.footer a .text {
+	display: none;
+}
+
+
+@media (orientation: landscape) {
+/*	.toggle-element-label {
+		/*display: none;
+	}*/
+
+	/*.background img {
+		max-height: none;
+		max-width: 100%;
+	}
+
+	.content h1, .content .information, .content .title {
+		display: none;
+	}*/
+}
