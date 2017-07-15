@@ -14,7 +14,8 @@ body {
 	background: #0e2745;
 	color: rgba(255, 255, 255, .75);
 	margin: 2.5em 0 0 1em;
-	overflow-x: hidden;
+	-webkit-text-size-adjust: none;
+	/*overflow-x: hidden;*/
 }
 
 .clearfix:after {
@@ -120,6 +121,9 @@ show elememts in toggle on modus and hide elements of toggle off modus
 	content: 'switch to timeline';
 }
 /* content */
+.content-wrapper {
+	overflow-x: hidden;
+}
 .content {
 	font-weight: 100;
 	position: relative;
@@ -131,7 +135,7 @@ show elememts in toggle on modus and hide elements of toggle off modus
 }
 .content .intro {
 	font-weight: 100;
-	margin-top: 1em;
+	margin-top: 2em;
 }
 .content .title {
 	font-weight: 900;
@@ -146,6 +150,7 @@ show elememts in toggle on modus and hide elements of toggle off modus
 	font-weight: 100;
 	line-height: 1.5em;
 	margin-bottom: 2em;
+	padding-right: 1em;
 }
 
 /*graph wrapper*/
