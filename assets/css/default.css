@@ -122,7 +122,8 @@ show elememts in toggle on modus and hide elements of toggle off modus
 }
 /* content */
 .content-wrapper {
-	overflow-x: hidden;
+	overflow: hidden;
+    margin-bottom: 1em;
 }
 .content {
 	font-weight: 100;
@@ -144,7 +145,7 @@ show elememts in toggle on modus and hide elements of toggle off modus
     text-align: right;
     padding-right: 1em;
     line-height: 2.5em;
-    margin: .25em 0;
+    margin: .5em 0 .25em 0;
 }
 .content .information {
 	font-weight: 100;
@@ -244,17 +245,8 @@ show elememts in toggle on modus and hide elements of toggle off modus
 	display: none;
 }
 
-@media (orientation: landscape) {
-/*	.toggle-element-label {
-		/*display: none;
-	}*/
-
-	/*.background img {
-		max-height: none;
-		max-width: 100%;
+@media (min-width: 1024px) {
+	body {
+		font-size: 1.75rem;
 	}
-
-	.content .intro, .content .information, .content .title {
-		display: none;
-	}*/
 }
