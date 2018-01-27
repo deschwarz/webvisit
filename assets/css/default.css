@@ -4,6 +4,7 @@ html, body {
 }
 
 html {
+	/*font-weight: bold;*/
 	font-size: 16px;
 	font-family: 'Work Sans', Arial, Helvetica, sans-serif;
 }
