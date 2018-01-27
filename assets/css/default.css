@@ -31,7 +31,7 @@ body {
 	display: none;
 }
 
-/* 
+/*
 animation
 handle show/hide elements with toggle
 
@@ -65,7 +65,7 @@ show elememts in toggle on modus and hide elements of toggle off modus
 .toggle-element:checked ~ .graph {
   animation-duration: .5s;
   animation-name: slideIn;
-  -webkit-animation-delay: .5s; 
+  -webkit-animation-delay: .5s;
   animation-delay: .5s;
   opacity: 0;
   margin-left: 0;
